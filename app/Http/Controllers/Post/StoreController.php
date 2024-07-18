@@ -11,8 +11,8 @@ class StoreController extends BaseController
 {
     public function __invoke(StoreRequest $request)
     {
+        //  dd(11111111111);
 
-      //  dd(11111111111);
         $data = $request->validated();
 
        // dd($data);
@@ -20,17 +20,25 @@ class StoreController extends BaseController
 
         $post = $this->service->store($data);
 
-        return new PostResource($post);
-/*
+        //dd($post);
+
+      //  return new PostResource($post);
+
+        /*
         $arr = [
             'title' => $post->title,
             'content' => $post->content,
             'image' => $post->image,
         ];
 
-        return $arr;            */
+        return $arr;
+
+           */
 
        // dd($post);
+
+
+          return new PostResource($post);
 
      //   return redirect()->route('posts.index');
     }

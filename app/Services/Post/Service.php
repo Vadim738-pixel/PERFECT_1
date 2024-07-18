@@ -25,6 +25,7 @@ class Service
 
         $post -> update($data);
         $post->tags()->sync($tags);
+        RETURN $post->fresh();
 
     }
 
